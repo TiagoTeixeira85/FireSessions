@@ -45,7 +45,7 @@ abstract class BaseSessionDriver implements \SessionHandlerInterface
         $this->config = $config;
 
         $isPHP7 = version_compare(PHP_VERSION, '7.0.0') >= 0;
-        $isPHP7 && self::$trueValue = true && self::$falseValue = false;
+        $isPHP7 && self::$trueValue = true && ((self::$falseValue = false) === false);
     }
 
     /**
